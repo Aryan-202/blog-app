@@ -1,7 +1,9 @@
 "use client"
 import { assets, blog_data } from '@/assets/assets';
+import Footer from '@/components/Footer';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link';
 
 const page = ({params}) => {
 
@@ -26,7 +28,9 @@ const page = ({params}) => {
     <>
     <div className='bg-gray-200 py-5 px-5 md:px-12 lg:px-28'>
         <div className='flex justify-between items-center'>
-            <Image src={assets.logo} width={180} alt='Logo' className='w-[130px] sm:w-auto' />
+            <Link href='/'>
+                <Image src={assets.logo} width={180} alt='Logo' className='w-[130px] sm:w-auto' />
+            </Link>
             <button className='flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-black shadow-[-7px_7px_0px_#000000]'>
                 Get Started
                 <Image src={assets.arrow} alt='Arrow' width={12} />
@@ -44,7 +48,28 @@ const page = ({params}) => {
         <p>{data?.description}</p>
         <h3 className='my-5 text-[18px] font-semibold'>Key Points: some key points here to show</h3>
         <p className='my-3 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, accusantium? Dolorem facere porro ullam fugiat consequuntur dolores repudiandae modi excepturi dignissimos sint, molestiae fugit, iure, deserunt reiciendis qui alias voluptates!</p>
+
+        
+        <p>{data?.description}</p>
+        <h3 className='my-5 text-[18px] font-semibold'>Key Points: some key points here to show</h3>
+        <p className='my-3 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, accusantium? Dolorem facere porro ullam fugiat consequuntur dolores repudiandae modi excepturi dignissimos sint, molestiae fugit, iure, deserunt reiciendis qui alias voluptates!</p>
+
+        <h1 className='my-8 text-[26px] font-semibold'>Conclusion:</h1>
+        <p>{data?.description}</p>
+        <h3 className='my-5 text-[18px] font-semibold'>Key Points: some key points here to show</h3>
+        <p className='my-3 '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, accusantium? Dolorem facere porro ullam fugiat consequuntur dolores repudiandae modi excepturi dignissimos sint, molestiae fugit, iure, deserunt reiciendis qui alias voluptates!</p>
+
+        <div className='my-24'>
+            <p className='text-black font font-semibold my-4'>Share it on social media</p>
+            <div className='flex'>
+                <Image src={assets.facebook_icon} alt='Facebook' width={50} height={50} className='cursor-pointer'/>
+                <Image src={assets.twitter_icon} alt='Twitter' width={50} height={50} className='cursor-pointer'/>
+                <Image src={assets.googleplus_icon} alt='Google Plus' width={50} height={50} className='cursor-pointer'/>
+            </div>
+        </div>
+        
     </div>
+    <Footer/>
     </>)
     :<div className='text-center my-24'>
         <h1 className='text-2xl sm:text-5xl font-semibold max-w-700px mx-auto'>Blog Not Found</h1>
