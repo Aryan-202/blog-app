@@ -20,9 +20,10 @@ const page = ({params}) => {
 
     useEffect(()=>{
         fetchBlogData();
-    },[])
+    },[id])
 
-  return (
+  return (data ? (
+    <>
     <div className='bg-gray-200 py-5 px-5 md:px-12 lg:px-28'>
         <div className='flex justify-between items-center'>
             <Image src={assets.logo} width={180} alt='Logo' className='w-[130px] sm:w-auto' />
@@ -32,9 +33,13 @@ const page = ({params}) => {
             </button>
         </div>
         <div className='text-center my-24'>
-            <h1 className='text-4xl font-bold'>{data?.title}</h1>
-            <p className='mt-4'>{data?.content}</p>
+            <h1 className='text-2xl sm:text-5xl font-semibold max-w-700px mx-auto'>{data?.title}</h1>
+            <Image src={data?.author_img} alt='' width={60} height={60} className='mx-auto mt-10'/>
         </div>
+    </div>
+    </>)
+    :<div className='text-center my-24'>
+        <h1 className='text-2xl sm:text-5xl font-semibold max-w-700px mx-auto'>Blog Not Found</h1>
     </div>
   )
 }
